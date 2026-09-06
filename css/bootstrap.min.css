@@ -827,7 +827,8 @@ progress {
     }
 }
 
-@media (min-width:1400px) {
+
+/* @media (min-width:1400px) {
     .container,
     .container-lg,
     .container-md,
@@ -836,9 +837,10 @@ progress {
     .container-xxl {
         max-width: 1440px
     }
-}
+} */
 
-@media (min-width:1600px) {
+
+/* @media (min-width:1600px) {
     .container,
     .container-lg,
     .container-md,
@@ -847,7 +849,7 @@ progress {
     .container-xxl {
         max-width: 1540px
     }
-}
+} */
 
 :root {
     --bs-breakpoint-xs: 0;

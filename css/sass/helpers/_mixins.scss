@@ -7,7 +7,7 @@
     text-decoration: $none;
     list-style: $none;
     color: $colortext;
-    font: normal 500 17px/28px "Readex Pro", sans-serif;
+    font: normal 400 16px/28px "Poppins", sans-serif;
 }
 
 @mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
@@ -80,21 +80,35 @@
     outline: $none;
     outline-style: $none;
     border: $zero;
+    gap: $com-spacing-1;
     text-align: center;
-    background: $blue;
+    background: $red;
     border-radius: 60px;
-    font-size: 19px;
-    font-weight: 700;
+    font-weight: 500;
     white-space: nowrap;
     @include transition(all 0.5s ease-in-out 0s);
     cursor: pointer;
     padding: $com-spacing-2 $com-spacing-6;
-    @media (max-width: 999px) {
-        font-size: 16px;
-        font-weight: 500;
+    @media (max-width: 999px) {}
+    &::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(0deg, transparent, transparent 30%, #ffffff36);
+        transform: rotate(-45deg);
+        transition: all 0.5s ease;
+        opacity: 0;
     }
     &:hover {
-        background: #000033;
+        // transform: scale(1.05);
+        box-shadow: 0 0 20px #e8364661;
+        &::before {
+            opacity: 1;
+            transform: rotate(-45deg) translateY(120%);
+        }
     }
     &:focus {
         outline: $none;
@@ -102,7 +116,6 @@
         border: $zero;
     }
     svg {
-        margin-right: $com-spacing-1;
         min-width: 22px;
         max-width: 22px;
         @include transition(all 0.5s ease-in-out 0s);
@@ -201,71 +214,28 @@
 }
 
 @mixin title {
-    display: flex;
-    align-items: center;
-    font-size: 26px;
+    font-size: 34px;
     font-weight: 700;
     line-height: 150%;
     color: $blak;
+    text-transform: capitalize;
     // overflow: hidden;
-    @include transition(all 0.5s ease-in-out 0s);
-    @include position(relative);
     @media (max-width: 999px) {
-        font-size: 22px;
-    }
-    a {
-        display: flex;
-        align-items: center;
-        color: $blak;
-        font-size: 26px;
-        @include transition(all 0.5s ease-in-out 0s);
-        @media (max-width: 999px) {
-            font-size: 22px;
+        font-size: 28px;
+        br {
+            display: none;
         }
-        &:hover {
-            color: $blue;
-            span {
-                background: #8080801A;
-                min-width: 78px;
-                i {
-                    margin-right: $zero;
-                }
-            }
-        }
-    }
-    b {
-        color: $blak
-    }
-    span {
-        @include flex;
-        border-radius: 60px;
-        height: 36px;
-        margin: $zero $com-spacing-1;
-        overflow: hidden;
-        @include transition(all 0.5s ease-in-out 0s);
-        i {
-            font-style: normal;
-            font-size: 12px;
-            font-weight: 300;
-            color: $blue;
-            margin: $zero -30px $zero $com-spacing-1;
-            @include transition(all 0.5s ease-in-out 0s);
-        }
-    }
-    svg {
-        width: 14px;
-        height: 14px;
     }
 }
 
 @mixin hyprlink {
     display: block;
     @include position(relative);
-    margin-top: $com-spacing-2;
-    color: $blak;
+    color: $white;
+    text-transform: capitalize;
     @include transition(all 0.5s ease-in-out 0s);
     &:hover {
-        color: $blue;
+        color: $red;
     }
 }
 
@@ -283,7 +253,6 @@
         background: #0000009e;
     }
     .title {
-        @include title;
         color: $white;
         padding: $zero;
         margin-top: 94px;
@@ -337,7 +306,7 @@
         display: $block;
         overflow: hidden;
         outline: $none;
-        margin: $zero -4px;
+        margin: $zero -8px;
         .slick-track {
             @include position(relative, $top: 0, $left: auto, $right: auto, $bottom: auto);
             display: $block;
@@ -397,12 +366,12 @@
                 height: $fullwidth;
                 border: $zero;
                 outline: $none;
-                background: $ofwhite;
+                background: #e836463d;
                 padding: $zero;
             }
         }
         li.slick-active {
-            background: $blue;
+            background: $red;
             button {
                 background: $none;
             }
@@ -465,76 +434,8 @@
     // }
 }
 
-@mixin carditem {
-    background: $ofwhite;
-    border-radius: 5px;
-    overflow: hidden;
-    @include transition(all 0.5s ease-in-out 0s);
-    .photo {
-        position: relative;
-        display: block;
-        width: $fullwidth;
-        height: 240px;
-        overflow: hidden;
-        @media (min-width: 1600px) {
-            // height: 197px;
-        }
-        img {
-            width: $fullwidth;
-            height: $fullwidth;
-            object-fit: cover;
-        }
-    }
-    .title {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        font-size: 15px;
-        font-weight: 500;
-        &:hover {
-            color: $blue;
-        }
-        @media (min-width:1600px) {
-            font-size: 17px;
-        }
-    }
-    .date {
-        display: block;
-        font-size: 12px;
-        font-weight: 400;
-        color: #898989;
-        margin-top: $com-spacing-2;
-    }
-}
-
-@mixin smallitem {
-    background: $ofwhite;
-    border-radius: 5px;
-    @include transition(all 0.5s ease-in-out 0s);
-    .title {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        font-size: 15px;
-        font-weight: 500;
-        &:hover {
-            color: $blue;
-        }
-        @media (min-width:1600px) {
-            font-size: 17px;
-            -webkit-line-clamp: 2;
-        }
-    }
-    .flextex {
-        .date {
-            color: #898989;
-        }
-    }
-}
-
 @mixin slidercarousel {
+    height: $fullwidth;
     overflow: hidden;
     &:hover {
         .carousel-control-next {
@@ -548,46 +449,44 @@
         height: $fullwidth;
     }
     .carousel-item {
-        height: $fullwidth;
-        border-radius: 5px;
         overflow: hidden;
-        @media (max-width: 999px) {
-            height: 284px;
+        height: $fullwidth;
+        background: $red;
+        &::after {
+            @include overlay;
+            background: linear-gradient(to left, #0d264800, #0d2648);
+            @media (max-width: 999px) {
+                background: linear-gradient(to bottom, #0d264800, #0d2648);
+            }
         }
-        .photo {
-            position: relative;
-            display: block;
+        img {
             width: $fullwidth;
             height: $fullwidth;
-            overflow: hidden;
-            img {
-                width: $fullwidth;
-                height: $fullwidth;
-                object-fit: cover;
-            }
+            object-fit: cover;
         }
     }
     .carousel-control-next,
     .carousel-control-prev {
-        width: $auto;
-        height: 28px;
+        width: 48px;
+        height: 48px;
         top: 50%;
+        background: #1b355794;
         opacity: 1;
         margin-top: -24px;
+        border-radius: 50%;
         @include transition(all 0.5s ease-in-out 0s);
-        @media (max-width: 991px) {
+        @media (max-width: 999px) {
             display: $none;
         }
         svg {
-            width: 28px;
-            height: 28px;
+            width: 18px;
+            height: 18px;
             fill: $white;
             @include transition(all 0.5s ease-in-out 0s);
         }
         &:hover {
-            svg {
-                fill: $blue;
-            }
+            background: $red;
+            svg {}
         }
     }
     .carousel-control-next {
@@ -597,6 +496,28 @@
         left: -90px;
         svg {
             @include rotate(180deg);
+        }
+    }
+    .carousel-indicators {
+        padding: $zero;
+        margin: $zero;
+        gap: $com-spacing-1;
+        margin-bottom: $com-spacing-6;
+        button {
+            box-sizing: inherit;
+            width: 12px;
+            height: 12px;
+            background: $white;
+            border-radius: 50%;
+            margin: $zero;
+            border: $zero;
+            opacity: 1;
+            @include transition(all 0.5s ease-in-out 0s);
+            &.active {
+                background: $red;
+                width: 44px;
+                border-radius: 8px;
+            }
         }
     }
 }
