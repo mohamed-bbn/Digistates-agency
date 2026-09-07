@@ -57,8 +57,6 @@
                 order: 2;
             }
             .boxborder {
-                border-bottom: 1px solid #1b355724;
-                padding-bottom: $com-spacing-6;
                 .title {
                     color: $red;
                     font-size: 24px;
@@ -72,9 +70,13 @@
                     }
                 }
             }
+            .borderitem {
+                border-top: 1px solid #1b355724;
+                padding-top: $com-spacing-6;
+                margin-top: $com-spacing-6;
+            }
             .bottom {
                 min-width: 160px;
-                margin-top: $com-spacing-6;
             }
         }
         .red-card {
@@ -638,13 +640,15 @@
                     }
                 }
             }
-            .coma {
+            .comma {
                 position: absolute;
                 right: $com-spacing-6;
                 top: $com-spacing-6;
-                img {
+                svg {
+                    min-width: 36px;
                     max-width: 36px;
-                    max-height: 36px;
+                    max-height: 26px;
+                    fill: #e8364642;
                 }
             }
             p {
@@ -653,6 +657,52 @@
                     font-size: 14px;
                 }
             }
+        }
+    }
+}
+
+.values-section {
+    background: #1a33530a;
+    .target-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $com-spacing-6;
+        margin-top: $com-spacing-7;
+        @media (max-width: 999px) {
+            grid-template-columns: repeat(1, 1fr);
+            margin-top: $com-spacing-6;
+            gap: $com-spacing-3;
+        }
+        .target-card {
+            background: $white;
+            border: 1px solid #E2E8F0;
+            border-radius: 16px;
+            padding: $com-spacing-7;
+            box-shadow: 0px 4px 12px 0px #00000004;
+            @media (max-width: 999px) {
+                padding: $com-spacing-6;
+            }
+            .card-icon {
+                @include flex;
+                width: 50px;
+                height: 50px;
+                background: #e836461c;
+                border-radius: 8px;
+                margin-bottom: $com-spacing-3;
+                svg {
+                    width: 30px;
+                    height: 30px;
+                    path {
+                        fill: $red;
+                    }
+                }
+            }
+            .title {
+                font-size: 20px;
+                font-weight: 500;
+                margin-bottom: $com-spacing-2;
+            }
+            p {}
         }
     }
 }

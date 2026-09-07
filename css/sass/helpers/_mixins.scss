@@ -232,6 +232,7 @@
     display: block;
     @include position(relative);
     color: $white;
+    font-size: 14px;
     text-transform: capitalize;
     @include transition(all 0.5s ease-in-out 0s);
     &:hover {
@@ -243,56 +244,61 @@
     @include section;
     height: 280px;
     padding: $zero;
-    background: $white url(../images/slides/img1.jpg) no-repeat fixed center center/cover;
+    background: $dark;
     @include flex;
     @media (max-width: 999px) {
         height: 230px;
     }
+    img {
+        position: absolute;
+        left: $zero;
+        top: $zero;
+        width: $fullwidth;
+        height: $fullwidth;
+        object-fit: cover;
+    }
     &:before {
         @include overlay;
-        background: #0000009e;
+        background: linear-gradient(to left, #0d264800, #0d2648);
+        z-index: 1;
+        @media (max-width: 999px) {
+            background: linear-gradient(to bottom, #0d264800, #0d2648);
+        }
+    }
+    .container {
+        z-index: 10;
     }
     .title {
         color: $white;
-        padding: $zero;
-        margin-top: 94px;
-        text-align: center;
-        &:before {
-            display: $none;
-        }
-        @media (max-width:999px) {
-            font-size: 22px;
-        }
+        @media (max-width: 999px) {}
     }
 }
 
 @mixin maplink {
     display: flex;
+    text-transform: capitalize;
+    margin-top: $com-spacing-2;
     li {
         display: $inline;
-        color: $blak;
-        font-size: 14px;
-        font-weight: 300;
-        margin-left: $com-spacing-2;
+        color: $white;
+        margin-inline-end: $com-spacing-3;
         @include transition(all 0.5s ease-in-out 0s);
         &:last-child {
-            margin-left: $zero;
+            margin: $zero;
         }
         a {
-            font-size: 14px;
-            font-weight: 300;
-            color: $blak;
+            color: $red;
             position: relative;
-            padding-left: $com-spacing-3;
+            padding-inline-end: $com-spacing-3;
             @include transition(all 0.5s ease-in-out 0s);
             &:hover {
-                color: $blue;
+                color: $red;
             }
             &:before {
-                @include position(absolute, $top: -3px, $left: 2px);
+                @include position(absolute, $top: -3px, $right: -2px);
                 content: "|";
                 display: $inline;
-                color: $blue;
+                color: $white;
             }
         }
     }
@@ -352,11 +358,11 @@
         li {
             @include position(relative);
             display: $inline;
-            margin: $zero 2px;
+            margin: $zero $com-spacing-1;
             padding: $zero;
             cursor: pointer;
-            width: 14px;
-            height: 4px;
+            width: 16px;
+            height: 6px;
             border-radius: 5px;
             button {
                 font-size: $zero;
@@ -368,6 +374,7 @@
                 outline: $none;
                 background: #e836463d;
                 padding: $zero;
+                border-radius: 5px;
             }
         }
         li.slick-active {
@@ -501,12 +508,12 @@
     .carousel-indicators {
         padding: $zero;
         margin: $zero;
-        gap: $com-spacing-1;
+        gap: $com-spacing-2;
         margin-bottom: $com-spacing-6;
         button {
             box-sizing: inherit;
-            width: 12px;
-            height: 12px;
+            width: 16px;
+            height: 16px;
             background: $white;
             border-radius: 50%;
             margin: $zero;

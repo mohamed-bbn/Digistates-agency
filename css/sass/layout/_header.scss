@@ -6,7 +6,7 @@
     border-bottom: 1px solid $white;
     @include transition(all 0.5s ease-in-out 0s);
     z-index: 1002;
-    @include prefixer (box-shadow, 4px 4px 60px rgba(0, 0, 0, 0.1), webkit moz o ms);
+    // @include prefixer (box-shadow, 4px 4px 60px rgba(0, 0, 0, 0.1), webkit moz o ms);
     @media (max-width: 999px) {
         padding: $com-spacing-2 $zero;
     }
@@ -166,7 +166,8 @@
             @include flex;
             position: relative;
             cursor: pointer;
-            color: $blak;
+            color: #0f172a;
+            font-weight: 500;
             text-transform: capitalize;
             @include transition(all 0.5s ease-in-out 0s);
             @media (max-width: 999px) {

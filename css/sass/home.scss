@@ -46,8 +46,17 @@ body {}
     cursor: pointer;
 }
 
+img {
+    width: auto;
+    height: auto;
+}
+
 .che-box {
     @include check-box;
+}
+
+.map-back {
+    @include map-back;
 }
 
 textarea.form-control {

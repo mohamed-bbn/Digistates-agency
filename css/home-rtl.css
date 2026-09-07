@@ -8,11 +8,6 @@
   -webkit-transition: all 0.5s ease-in-out 0s;
   transition: all 0.5s ease-in-out 0s;
   z-index: 1002;
-  -webkit-box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.1);
-  -o-box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.1);
-  -ms-box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.1);
-  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.1);
   /* End NavMenu */ }
   @media (max-width: 999px) {
     .header {
@@ -150,7 +145,8 @@
       justify-content: center;
       position: relative;
       cursor: pointer;
-      color: #000;
+      color: #0f172a;
+      font-weight: 500;
       text-transform: capitalize;
       -moz-transition: all 0.5s ease-in-out 0s;
       -o-transition: all 0.5s ease-in-out 0s;
@@ -394,12 +390,12 @@
     .slider-item .carousel .carousel-indicators {
       padding: 0px;
       margin: 0px;
-      gap: 4px;
+      gap: 8px;
       margin-bottom: 24px; }
       .slider-item .carousel .carousel-indicators button {
         box-sizing: inherit;
-        width: 12px;
-        height: 12px;
+        width: 16px;
+        height: 16px;
         background: #fff;
         border-radius: 50%;
         margin: 0px;
