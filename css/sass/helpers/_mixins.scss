@@ -86,6 +86,7 @@
     border-radius: 60px;
     font-weight: 500;
     white-space: nowrap;
+    text-transform: capitalize;
     @include transition(all 0.5s ease-in-out 0s);
     cursor: pointer;
     padding: $com-spacing-2 $com-spacing-6;
@@ -147,10 +148,10 @@
 
 @mixin social {
     @include flex;
+    gap: $com-spacing-4;
     direction: ltr;
     a {
         position: relative;
-        margin: $zero $com-spacing-2;
         @include transition(all 0.5s ease-in-out 0s);
         svg {
             fill: $white;
@@ -197,16 +198,14 @@
 }
 
 @mixin input {
-    height: 42px;
+    height: 48px;
     text-transform: $none;
-    background: #F8FAFD;
     @include border-radius(8px);
-    border: 1px solid transparent;
     @include transition(all 0.5s ease-in-out 0s);
     &:focus,
     &:hover,
     &:focus-visible {
-        border: 1px solid $blue;
+        border: 1px solid $dark;
         outline: 0;
         outline-style: $none;
         box-shadow: none;
@@ -247,7 +246,7 @@
     background: $dark;
     @include flex;
     @media (max-width: 999px) {
-        height: 230px;
+        height: 164px;
     }
     img {
         position: absolute;
@@ -272,6 +271,9 @@
         color: $white;
         @media (max-width: 999px) {}
     }
+    p {
+        color: #b7b7b7;
+    }
 }
 
 @mixin maplink {
@@ -280,14 +282,14 @@
     margin-top: $com-spacing-2;
     li {
         display: $inline;
-        color: $white;
+        color: #b3b3b3;
         margin-inline-end: $com-spacing-3;
         @include transition(all 0.5s ease-in-out 0s);
         &:last-child {
             margin: $zero;
         }
         a {
-            color: $red;
+            color: $white;
             position: relative;
             padding-inline-end: $com-spacing-3;
             @include transition(all 0.5s ease-in-out 0s);

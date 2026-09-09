@@ -134,7 +134,6 @@ $(window).on("load", function() {
          SCROLL TO TOP BUTTON
        ----------------------------------------*/
 
-
     var titleElem = $('#main-title');
     var text = titleElem.text();
     titleElem.empty();
@@ -148,7 +147,10 @@ $(window).on("load", function() {
     var animated = false;
 
     $(window).on('scroll', function() {
-        var sectionTop = $('#about-section').offset().top;
+        var aboutSec = $('#about-section');
+        if (aboutSec.length === 0) return;
+
+        var sectionTop = aboutSec.offset().top;
         var windowHeight = $(window).height();
         var scrollTop = $(window).scrollTop();
 
@@ -204,7 +206,6 @@ $(window).on("load", function() {
 
         }
     });
-
     /*----------------------------------------
         About Section
      ----------------------------------------*/
@@ -235,6 +236,80 @@ $(window).on("load", function() {
             { breakpoint: 767, settings: { slidesToShow: 1, slidesToScroll: 1 } },
         ]
     });
+
+    /*----------------------------------------
+        About Section
+     ----------------------------------------*/
+
+    function checkEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function checkPhone(phone) {
+        return /^[0-9+\s-]{8,15}$/.test(phone);
+    }
+
+    $('#sessionForm').on('submit', function(e) {
+        e.preventDefault();
+        let valid = true;
+
+        const name = $('#fullName');
+        if ($.trim(name.val()) === '') {
+            showErr(name);
+            valid = false;
+        } else {
+            hideErr(name);
+        }
+
+        const phone = $('#phone');
+        if ($.trim(phone.val()) === '' || !checkPhone(phone.val())) {
+            showErr(phone);
+            valid = false;
+        } else {
+            hideErr(phone);
+        }
+
+        const email = $('#email');
+        if ($.trim(email.val()) === '' || !checkEmail(email.val())) {
+            showErr(email);
+            valid = false;
+        } else {
+            hideErr(email);
+        }
+
+        const subject = $('#subject');
+        if ($.trim(subject.val()) === '') {
+            showErr(subject);
+            valid = false;
+        } else {
+            hideErr(subject);
+        }
+
+
+        if (valid) {
+            $('#successBox').slideDown();
+            $('#sessionForm')[0].reset();
+            setTimeout(() => $('#successBox').slideUp(), 4000);
+        }
+    });
+
+    $('input').on('input', function() {
+        if ($.trim($(this).val()) !== '') {
+            hideErr($(this));
+        }
+    });
+
+    function showErr(elem) {
+        elem.addClass('input-error');
+        elem.siblings('.error-text').fadeIn(150);
+    }
+
+    function hideErr(elem) {
+        elem.removeClass('input-error');
+        elem.siblings('.error-text').fadeOut(150);
+    }
+
+
 
 
 
