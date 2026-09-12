@@ -310,6 +310,31 @@ $(window).on("load", function() {
     }
 
 
+    /*----------------------------------------
+        SessionForm
+     ----------------------------------------*/
+
+
+    $('#searchInput').on('keyup', function() {
+        let searchTerm = $(this).val().toLowerCase().trim();
+        let visibleCount = 0;
+
+        $('.client-card').each(function() {
+            let cardText = $(this).text().toLowerCase();
+
+            if (cardText.includes(searchTerm)) {
+                $(this).show();
+                visibleCount++;
+            } else {
+                $(this).hide();
+            }
+        });
+        if (visibleCount === 0) {
+            $('#noResults').show();
+        } else {
+            $('#noResults').hide();
+        }
+    });
 
 
 
