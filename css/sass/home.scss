@@ -30,7 +30,9 @@ textarea,
     @include reset;
 }
 
-body {}
+body {
+    height: 10000px;
+}
 
 ::-webkit-scrollbar {
     width: 5px;
@@ -49,6 +51,10 @@ body {}
 img {
     width: auto;
     height: auto;
+}
+
+.slogin {
+    color: $red;
 }
 
 .che-box {

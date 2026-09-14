@@ -339,5 +339,19 @@ $(window).on("load", function() {
 
 
 
+    $(".menu-toggle").click(function() {
+        $(".site-menu,.overbox").addClass("active");
+        $("body").css("overflow", "hidden")
+    });
+
+
+    $(".cancel ,.overbox").click(function() {
+        $(".site-menu,.overbox").removeClass("active");
+        $("body").css("overflow", "auto")
+    });
+
+
+
+
     new WOW().init();
 }); // END window.load

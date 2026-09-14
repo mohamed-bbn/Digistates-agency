@@ -352,4 +352,177 @@
     }
 }
 
+.site-header {
+    position: absolute;
+    background: $none;
+    padding: $com-spacing-2 $zero;
+    border-color: #ffffff33;
+    @media (max-width: 999px) {
+        position: relative;
+        background: $dark;
+    }
+    &.sticky {
+        background: $dark;
+    }
+    .menu-toggle {
+        @include flex;
+        position: relative;
+        cursor: pointer;
+        min-width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: $red;
+        svg {
+            max-width: 30px;
+            max-height: 34px;
+        }
+    }
+    .burger {
+        position: relative;
+        display: none;
+        cursor: pointer;
+        user-select: none;
+        width: 24px;
+        height: 1rem;
+        background: transparent;
+        &-line {
+            position: absolute;
+            display: block;
+            right: $zero;
+            width: 100%;
+            height: 2px;
+            opacity: 1;
+            border: none;
+            outline: none;
+            background: $blak;
+            &:nth-child(1) {
+                top: 0px;
+            }
+            &:nth-child(2) {
+                top: 0.5rem;
+                width: 80%;
+            }
+            &:nth-child(3) {
+                top: 1rem;
+                width: 60%;
+            }
+        }
+        // Responsive Media Query
+        @media only screen and (max-width: 999px) {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    .site-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: fixed;
+        width: 359px;
+        height: 100vh;
+        top: $zero;
+        left: -100%;
+        background: $white;
+        transition: all 0.35s ease-in-out;
+        z-index: 100;
+        overflow: hidden;
+        overflow-y: scroll;
+        @media (max-width: 999px) {
+            width: 300px;
+        }
+        &::-webkit-scrollbar {
+            width: $zero;
+        }
+        &.active {
+            left: $zero;
+        }
+        .itemhead {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px $com-spacing-6;
+            background: $dark;
+            @media (max-width: 999px) {
+                padding: $com-spacing-3;
+            }
+            .cancel {
+                cursor: pointer;
+                svg {
+                    @media (max-width: 999px) {
+                        width: 36px;
+                        height: 36px;
+                    }
+                }
+            }
+        }
+        .logo {
+            img {
+                max-width: 82px;
+            }
+        }
+        .menuitem {
+            display: block;
+            padding: $com-spacing-6;
+            @media (max-width: 999px) {
+                padding: $com-spacing-3;
+            }
+            a {
+                position: relative;
+                display: flex;
+                align-items: center;
+                gap: $com-spacing-2;
+                color: #1F2937;
+                font-size: 15px;
+                border-radius: 10px;
+                padding: $com-spacing-2 $com-spacing-3;
+                margin-bottom: $com-spacing-1;
+                transition: all 0.35s ease-in-out;
+                &:last-child {
+                    margin-bottom: $zero;
+                }
+                &:hover,
+                &.active {
+                    color: $dark;
+                    background: #0d264838;
+                    svg {
+                        fill: $dark;
+                    }
+                }
+                svg {
+                    min-width: 18px;
+                    max-width: 18px;
+                    max-height: 24px;
+                }
+            }
+        }
+    }
+    .actions {
+        .language {
+            border-color: $white;
+            color: $white;
+            min-width: 44px !important;
+            max-width: 44px !important;
+            height: 44px;
+        }
+    }
+}
+
+.overbox {
+    position: fixed;
+    top: $zero;
+    left: $zero;
+    height: $fullwidth;
+    width: $fullwidth;
+    z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.35s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.65);
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
 //////////////////////// End header
