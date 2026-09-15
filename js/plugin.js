@@ -11,6 +11,16 @@ $(window).on("load", function() {
         }
     });
 
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 1) {
+            $('.site-header').addClass("sticky");
+        } else {
+            if ($(this).scrollTop() < 1) {
+                $('.site-header').removeClass("sticky");
+            }
+        }
+    });
+
 
     /*----------------------------------------
       HEADER STICKY ON SCROLL
@@ -341,7 +351,8 @@ $(window).on("load", function() {
 
     $(".menu-toggle").click(function() {
         $(".site-menu,.overbox").addClass("active");
-        $("body").css("overflow", "hidden")
+        $("body").css("overflow", "hidden");
+        // $(".site-header").css("overflow", "hidden");
     });
 
 
@@ -349,6 +360,9 @@ $(window).on("load", function() {
         $(".site-menu,.overbox").removeClass("active");
         $("body").css("overflow", "auto")
     });
+
+
+
 
 
 

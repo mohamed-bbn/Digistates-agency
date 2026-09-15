@@ -1383,7 +1383,9 @@
 }
 
 .site-cyber,
-.site-consulting {
+.site-consulting,
+.site-critical,
+.site-assessments {
     .shape {
         position: absolute;
         bottom: $zero;
@@ -1502,12 +1504,14 @@
         max-width: 95%;
         border: 1px solid $red;
         padding: $com-spacing-3;
+        border-radius: 8px;
         .inner {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: $com-spacing-3;
             width: $fullwidth;
             background: $white;
+            border-radius: 8px;
             padding: $com-spacing-8 $com-spacing-5;
             @media (max-width: 999px) {
                 grid-template-columns: repeat(2, 1fr);
@@ -1575,6 +1579,7 @@
         .subitem {
             padding: $com-spacing-6;
             background: $dark;
+            border-radius: 8px;
             box-shadow: rgba(0, 0, 0, 0.07) 0px 10px 25px 0px;
             &:nth-child(odd) {
                 background-image: linear-gradient(120deg, #E83646 0%, $dark 100%);
@@ -1598,6 +1603,135 @@
                 margin-top: $com-spacing-2;
                 line-height: 20px;
                 color: #FFFFFFC4;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.site-classification,
+.site-workforce {
+    background: #f5f5ff;
+    .target-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $com-spacing-6;
+        margin-top: $com-spacing-8;
+        @media (max-width: 999px) {
+            grid-template-columns: repeat(1, 1fr);
+            margin-top: $com-spacing-6;
+            gap: $com-spacing-3;
+        }
+        .target-card {
+            background: $white;
+            border: 1px solid #E2E8F0;
+            padding: $com-spacing-6;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px 0px #00000004;
+            @media (max-width: 999px) {
+                padding: $com-spacing-6;
+            }
+            .card-icon {
+                @include flex;
+                width: 80px;
+                height: 80px;
+                background: #f5f5ff;
+                border-radius: 8px;
+                margin: $zero auto $com-spacing-3 auto;
+                svg {
+                    width: 40px;
+                    height: 40px;
+                    fill: $red;
+                }
+            }
+            .title {
+                font-size: 22px;
+                font-weight: 500;
+                margin-bottom: $com-spacing-3;
+                text-align: center;
+            }
+            span {
+                display: block;
+                color: $red;
+                font-size: 13px;
+                text-align: center;
+            }
+            p {
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.site-workforce {
+    .target-grid {
+        grid-template-columns: repeat(2, 1fr);
+        @media (max-width: 999px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .target-card {
+            padding: $zero !important;
+            border: $zero;
+            overflow: hidden;
+            @media (max-width: 999px) {}
+            .photo {
+                width: $fullwidth;
+                height: 310px;
+                overflow: hidden;
+                img {
+                    width: $fullwidth;
+                    height: $fullwidth;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+
+.site-approach {
+    .target-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: $com-spacing-6;
+        margin-top: $com-spacing-8;
+        @media (max-width: 999px) {
+            grid-template-columns: repeat(2, 1fr);
+            margin-top: $com-spacing-6;
+            gap: $com-spacing-3;
+        }
+        @media (max-width:767px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .target-card {
+            background: $white;
+            border: 1px solid #E2E8F0;
+            padding: $com-spacing-6;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px 0px #00000004;
+            @media (max-width: 999px) {
+                padding: $com-spacing-6;
+            }
+            .card-icon {
+                @include flex;
+                width: 80px;
+                height: 80px;
+                background: #f5f5ff;
+                border-radius: 8px;
+                margin: $zero auto $com-spacing-3 auto;
+                svg {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+            .title {
+                font-size: 22px;
+                font-weight: 500;
+                margin-bottom: $com-spacing-3;
+                text-align: center;
+            }
+            p {
+                font-size: 14px;
                 text-align: center;
             }
         }

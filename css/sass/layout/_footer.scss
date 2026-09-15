@@ -18,7 +18,7 @@
         opacity: 1;
     }
     &:hover {
-        background: $blue;
+        // background: $blue;
     }
     svg {
         @include rotate(90deg);
@@ -45,13 +45,6 @@
         }
     }
     .item {
-        .logo {
-            @include flex;
-            @media (max-width: 999px) {}
-            img {
-                max-width: 193px;
-            }
-        }
         .title {
             color: $white;
             font-size: 20px;
@@ -91,22 +84,29 @@
                 }
             }
         }
-        .social {
-            margin-top: $com-spacing-5;
-            @media (max-width: 999px) {
-                justify-content: center;
-            }
+    }
+    .logo {
+        @include flex;
+        @media (max-width: 999px) {}
+        img {
+            max-width: 193px;
         }
-        .navmenu {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: $com-spacing-2;
-            margin-top: $com-spacing-4;
-            a {
-                @include hyprlink;
-                @media (max-width: 999px) {
-                    text-align: center;
-                }
+    }
+    .social {
+        margin-top: $com-spacing-5;
+        @media (max-width: 999px) {
+            justify-content: center;
+        }
+    }
+    .navmenu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $com-spacing-2;
+        margin-top: $com-spacing-4;
+        a {
+            @include hyprlink;
+            @media (max-width: 999px) {
+                text-align: center;
             }
         }
     }
@@ -122,6 +122,17 @@
             color: $white;
             font-size: 14px;
             @media (max-width: 999px) {}
+        }
+    }
+    &.site-footer {
+        .navmenu {
+            @include flex;
+            flex-wrap: wrap;
+            gap: $com-spacing-5;
+            margin-top: $com-spacing-7;
+        }
+        .social {
+            margin-top: $com-spacing-7;
         }
     }
 }

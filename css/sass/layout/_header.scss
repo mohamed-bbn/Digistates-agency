@@ -354,64 +354,43 @@
 
 .site-header {
     position: absolute;
-    background: $none;
-    padding: $com-spacing-2 $zero;
-    border-color: #ffffff33;
+    top: $zero;
+    left: $zero;
+    width: $fullwidth;
+    background: $dark;
+    padding: $com-spacing-3 $zero;
+    border-bottom: 1px solid #ffffff33;
+    z-index: 1000;
+    @include transition(all 0.5s ease-in-out 0s);
     @media (max-width: 999px) {
         position: relative;
         background: $dark;
     }
     &.sticky {
-        background: $dark;
-    }
-    .menu-toggle {
-        @include flex;
-        position: relative;
-        cursor: pointer;
-        min-width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        background: $red;
-        svg {
-            max-width: 30px;
-            max-height: 34px;
-        }
-    }
-    .burger {
-        position: relative;
-        display: none;
-        cursor: pointer;
-        user-select: none;
-        width: 24px;
-        height: 1rem;
-        background: transparent;
-        &-line {
-            position: absolute;
-            display: block;
-            right: $zero;
-            width: 100%;
-            height: 2px;
-            opacity: 1;
-            border: none;
-            outline: none;
-            background: $blak;
-            &:nth-child(1) {
-                top: 0px;
-            }
-            &:nth-child(2) {
-                top: 0.5rem;
-                width: 80%;
-            }
-            &:nth-child(3) {
-                top: 1rem;
-                width: 60%;
+        position: fixed;
+        padding: $com-spacing-2 $zero;
+        .logo {
+            img {
+                max-width: 75px;
+                @media (max-width: 999px) {
+                    max-width: 75px;
+                }
             }
         }
-        // Responsive Media Query
-        @media only screen and (max-width: 999px) {
-            display: block;
-            opacity: 1;
-            visibility: visible;
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media (max-width: 999px) {}
+    }
+    .logo {
+        img {
+            max-width: 100px;
+            @include transition(all 0.5s ease-in-out 0s);
+            @media (max-width: 999px) {
+                max-width: 75px;
+            }
         }
     }
     .site-menu {
@@ -498,12 +477,40 @@
         }
     }
     .actions {
+        display: flex;
+        align-items: center;
+        gap: $com-spacing-3;
         .language {
-            border-color: $white;
-            color: $white;
-            min-width: 44px !important;
-            max-width: 44px !important;
+            @include flex;
+            position: relative;
+            border-radius: 50%;
+            border: 1px solid $white;
+            min-width: 44px;
+            max-width: 44px;
             height: 44px;
+            color: $white;
+            @include transition(all 0.5s ease-in-out 0s);
+            &:hover {
+                box-shadow: 0 0 20px #e8364661;
+            }
+        }
+        .menu-toggle {
+            @include flex;
+            position: relative;
+            cursor: pointer;
+            min-width: 44px;
+            max-width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: $red;
+            @include transition(all 0.5s ease-in-out 0s);
+            &:hover {
+                box-shadow: 0 0 20px #e8364661;
+            }
+            svg {
+                max-width: 30px;
+                max-height: 34px;
+            }
         }
     }
 }
