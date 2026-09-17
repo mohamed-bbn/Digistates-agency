@@ -357,41 +357,15 @@
     top: $zero;
     left: $zero;
     width: $fullwidth;
-    background: $dark;
-    padding: $com-spacing-3 $zero;
-    border-bottom: 1px solid #ffffff33;
-    z-index: 1000;
-    @include transition(all 0.5s ease-in-out 0s);
+    background: none;
+    border: $zero;
+    background: linear-gradient(180deg, #040b14 0%, #00000000 100%);
     @media (max-width: 999px) {
         position: relative;
         background: $dark;
     }
     &.sticky {
-        position: fixed;
-        padding: $com-spacing-2 $zero;
-        .logo {
-            img {
-                max-width: 75px;
-                @media (max-width: 999px) {
-                    max-width: 75px;
-                }
-            }
-        }
-    }
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        @media (max-width: 999px) {}
-    }
-    .logo {
-        img {
-            max-width: 100px;
-            @include transition(all 0.5s ease-in-out 0s);
-            @media (max-width: 999px) {
-                max-width: 75px;
-            }
-        }
+        background: $dark;
     }
     .site-menu {
         display: flex;
@@ -477,22 +451,9 @@
         }
     }
     .actions {
-        display: flex;
-        align-items: center;
-        gap: $com-spacing-3;
         .language {
-            @include flex;
-            position: relative;
-            border-radius: 50%;
             border: 1px solid $white;
-            min-width: 44px;
-            max-width: 44px;
-            height: 44px;
             color: $white;
-            @include transition(all 0.5s ease-in-out 0s);
-            &:hover {
-                box-shadow: 0 0 20px #e8364661;
-            }
         }
         .menu-toggle {
             @include flex;
@@ -510,6 +471,23 @@
             svg {
                 max-width: 30px;
                 max-height: 34px;
+            }
+        }
+    }
+    .burger-line {
+        background: $white;
+    }
+    .menu {
+        &-link {
+            color: $white;
+            @media (max-width: 999px) {
+                color: $blak;
+            }
+            svg {
+                fill: $white;
+                @media (max-width: 999px) {
+                    fill: $blak;
+                }
             }
         }
     }
