@@ -2112,8 +2112,11 @@
         gap: $com-spacing-6;
         margin-top: $com-spacing-8;
         @media (max-width: 999px) {
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             margin-top: $com-spacing-6;
+        }
+        @media (max-width: 550px) {
+            grid-template-columns: repeat(1, 1fr);
         }
     }
     .fact-card {
@@ -2159,9 +2162,7 @@
     @include flex;
     height: 100vh;
     background: $dark;
-    @media (max-width: 999px) {
-        height: $auto;
-    }
+    @media (max-width: 999px) {}
     &::before {
         @include overlay;
         background-image: linear-gradient(to bottom, #ff000036, #0e0129fc);
@@ -2172,7 +2173,7 @@
         left: $zero;
         top: $zero;
         width: $fullwidth;
-        max-height: $fullwidth;
+        height: $fullwidth;
         object-fit: cover;
     }
     .container {
@@ -2180,8 +2181,12 @@
         max-width: 50%;
         z-index: 2;
         margin-top: 99px;
+        @media (max-width: 1199px) {
+            max-width: 70%;
+        }
         @media (max-width: 999px) {
             margin: $zero;
+            max-width: $fullwidth;
         }
     }
     .title {
@@ -2189,14 +2194,13 @@
         color: $white;
         text-align: center;
         margin-bottom: $com-spacing-4;
-        @media (max-width: 999px) {}
+        @media (max-width: 999px) {
+            font-size: 40px;
+        }
     }
     p {
         color: #ffffffe0;
         text-align: center;
         margin-bottom: $com-spacing-4;
-        @media (max-width: 999px) {
-            display: none;
-        }
     }
 }
