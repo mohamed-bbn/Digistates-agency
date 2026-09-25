@@ -1,24 +1,28 @@
 .header {
-    position: relative;
+    position: absolute;
+    top: $zero;
+    left: $zero;
     width: $fullwidth;
-    background: $white;
-    // padding: $com-spacing-3 $zero;
-    border-bottom: 1px solid $white;
+    padding: $com-spacing-3 $zero;
+    background: linear-gradient(180deg, #040b14 0%, #00000000 100%);
     @include transition(all 0.5s ease-in-out 0s);
     z-index: 1002;
     // @include prefixer (box-shadow, 4px 4px 60px rgba(0, 0, 0, 0.1), webkit moz o ms);
+    @media (max-width: 999px) {}
     @media (max-width: 999px) {
+        position: relative;
         padding: $com-spacing-2 $zero;
+        background: $dark;
     }
     &.sticky {
         position: fixed;
-        top: $zero;
-        left: $zero;
-        @include prefixer (box-shadow, 4px 4px 60px rgba(0, 0, 0, 0.1), webkit moz o ms);
+        background: $dark;
+        padding: $zero;
         @include transition(all 0.5s ease-in-out 0s);
         animation: slideDown 0.4s ease forwards;
         @media (max-width: 999px) {
             animation: none;
+            padding: $com-spacing-2 $zero;
         }
         @keyframes slideDown {
             from {
@@ -37,7 +41,7 @@
             }
         }
         .menu-item {
-            height: 84px;
+            height: 76px;
             @media (max-width: 999px) {
                 height: auto;
             }
@@ -66,7 +70,7 @@
             opacity: 1;
             border: none;
             outline: none;
-            background: $blak;
+            background: $white;
             &:nth-child(1) {
                 top: 0px;
             }
@@ -134,7 +138,7 @@
             overflow-y: auto;
             visibility: hidden;
             box-shadow: 0px 10px 40px 0px #06163a1a;
-            background: $white;
+            background: $dark;
             padding: $com-spacing-3;
             transition: all 0.5s ease;
             &.active {
@@ -154,11 +158,11 @@
         gap: $com-spacing-7;
         &-item {
             position: relative;
-            height: 108px;
+            height: 70px;
             display: flex;
             align-items: center;
             @media (max-width: 999px) {
-                border-bottom: 1px solid $ofwhite;
+                border-bottom: 1px solid #f3f4f626;
                 height: auto;
             }
         }
@@ -166,7 +170,7 @@
             @include flex;
             position: relative;
             cursor: pointer;
-            color: #0f172a;
+            color: $white;
             font-weight: 500;
             text-transform: capitalize;
             @include transition(all 0.5s ease-in-out 0s);
@@ -191,7 +195,7 @@
                 position: relative;
                 max-width: 16px;
                 height: 16px;
-                fill: $blak;
+                fill: $white;
                 @media only screen and (max-width: 999px) {
                     z-index: -1;
                 }
@@ -256,7 +260,7 @@
         transform: translateY(1rem);
         background: $white;
         @include prefixer (box-shadow, 4px 4px 60px rgba(0, 0, 0, 0.1), webkit moz o ms);
-        border-radius: $zero $zero 16px 16px;
+        // border-radius: $zero $zero 16px 16px;
         @include transition(all 0.5s ease-in-out 0s);
         overflow: hidden;
         padding: $com-spacing-3;
@@ -271,8 +275,8 @@
             transform: translateY(0px);
             box-shadow: none;
             padding: $zero;
-            background: $ofwhite;
             width: $fullwidth;
+            background: none;
             border-radius: $zero;
         }
         a {
@@ -284,8 +288,10 @@
             padding-bottom: $com-spacing-2;
             margin-bottom: $com-spacing-2;
             @media only screen and (max-width: 999px) {
-                padding: $com-spacing-2 $com-spacing-3;
+                padding: $com-spacing-1 $com-spacing-3;
                 margin: $zero;
+                border: $zero;
+                color: #ffffffb0;
             }
             &:last-child {
                 margin: $zero;
@@ -330,7 +336,8 @@
             @include flex;
             position: relative;
             border-radius: 50%;
-            border: 1px solid $red;
+            border: 1px solid $white;
+            color: $white;
             min-width: 44px;
             height: 44px;
             @include transition(all 0.5s ease-in-out 0s);
@@ -347,147 +354,6 @@
         .bottom {
             @media (max-width: 999px) {
                 display: none;
-            }
-        }
-    }
-}
-
-.site-header {
-    position: absolute;
-    top: $zero;
-    left: $zero;
-    width: $fullwidth;
-    background: none;
-    border: $zero;
-    background: linear-gradient(180deg, #040b14 0%, #00000000 100%);
-    @media (max-width: 999px) {
-        position: relative;
-        background: $dark;
-    }
-    &.sticky {
-        background: $dark;
-    }
-    .site-menu {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: fixed;
-        width: 359px;
-        height: 100vh;
-        top: $zero;
-        left: -100%;
-        background: $white;
-        transition: all 0.35s ease-in-out;
-        z-index: 100;
-        overflow: hidden;
-        overflow-y: scroll;
-        @media (max-width: 999px) {
-            width: 300px;
-        }
-        &::-webkit-scrollbar {
-            width: $zero;
-        }
-        &.active {
-            left: $zero;
-        }
-        .itemhead {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px $com-spacing-6;
-            background: $dark;
-            @media (max-width: 999px) {
-                padding: $com-spacing-3;
-            }
-            .cancel {
-                cursor: pointer;
-                svg {
-                    @media (max-width: 999px) {
-                        width: 36px;
-                        height: 36px;
-                    }
-                }
-            }
-        }
-        .logo {
-            img {
-                max-width: 82px;
-            }
-        }
-        .menuitem {
-            display: block;
-            padding: $com-spacing-6;
-            @media (max-width: 999px) {
-                padding: $com-spacing-3;
-            }
-            a {
-                position: relative;
-                display: flex;
-                align-items: center;
-                gap: $com-spacing-2;
-                color: #1F2937;
-                font-size: 15px;
-                border-radius: 10px;
-                padding: $com-spacing-2 $com-spacing-3;
-                margin-bottom: $com-spacing-1;
-                transition: all 0.35s ease-in-out;
-                &:last-child {
-                    margin-bottom: $zero;
-                }
-                &:hover,
-                &.active {
-                    color: $dark;
-                    background: #0d264838;
-                    svg {
-                        fill: $dark;
-                    }
-                }
-                svg {
-                    min-width: 18px;
-                    max-width: 18px;
-                    max-height: 24px;
-                }
-            }
-        }
-    }
-    .actions {
-        .language {
-            border: 1px solid $white;
-            color: $white;
-        }
-        .menu-toggle {
-            @include flex;
-            position: relative;
-            cursor: pointer;
-            min-width: 44px;
-            max-width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: $red;
-            @include transition(all 0.5s ease-in-out 0s);
-            &:hover {
-                box-shadow: 0 0 20px #e8364661;
-            }
-            svg {
-                max-width: 30px;
-                max-height: 34px;
-            }
-        }
-    }
-    .burger-line {
-        background: $white;
-    }
-    .menu {
-        &-link {
-            color: $white;
-            @media (max-width: 999px) {
-                color: $blak;
-            }
-            svg {
-                fill: $white;
-                @media (max-width: 999px) {
-                    fill: $blak;
-                }
             }
         }
     }

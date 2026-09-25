@@ -363,7 +363,26 @@ $(window).on("load", function() {
 
 
 
+    $('.fact-number').each(function() {
+        let $this = $(this),
+            countTo = $this.attr('data-target');
 
+        $({
+            countNum: 0
+        }).animate({
+            countNum: countTo
+        }, {
+            duration: 2500,
+            easing: 'swing',
+            step: function() {
+                $this.text(Math.floor(this.countNum).toLocaleString() + '+');
+            },
+            complete: function() {
+                $this.text(Number(this.countNum).toLocaleString() + '+');
+            }
+        });
+
+    });
 
 
 

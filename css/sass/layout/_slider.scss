@@ -1,6 +1,6 @@
 .slider-item {
     padding: $zero !important;
-    height: calc(100vh - 109px);
+    height: 100vh;
     overflow: hidden;
     @media (max-width: 999px) {
         height: 80vh;

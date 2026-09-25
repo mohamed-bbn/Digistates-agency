@@ -220,7 +220,8 @@
     text-transform: capitalize;
     // overflow: hidden;
     @media (max-width: 999px) {
-        font-size: 28px;
+        font-size: 24px;
+        font-weight: 600;
         br {
             display: none;
         }
@@ -241,7 +242,7 @@
 
 @mixin map-back {
     @include section;
-    height: 280px;
+    height: 380px;
     padding: $zero;
     background: $dark;
     @include flex;
@@ -255,10 +256,11 @@
         width: $fullwidth;
         height: $fullwidth;
         object-fit: cover;
+        object-position: top;
     }
     &:before {
         @include overlay;
-        background: linear-gradient(to left, #0d264800, #0d2648);
+        background: linear-gradient(to left, #0d264800, #0d26484d);
         z-index: 1;
         @media (max-width: 999px) {
             background: linear-gradient(to bottom, #0d264800, #0d2648);
@@ -269,6 +271,7 @@
     }
     .title {
         color: $white;
+        text-align: center;
         @media (max-width: 999px) {}
     }
     p {
@@ -277,7 +280,7 @@
 }
 
 @mixin maplink {
-    display: flex;
+    @include flex;
     text-transform: capitalize;
     margin-top: $com-spacing-2;
     li {

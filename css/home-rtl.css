@@ -1,8 +1,10 @@
 .header {
-  position: relative;
+  position: absolute;
+  top: 0px;
+  left: 0px;
   width: 100%;
-  background: #fff;
-  border-bottom: 1px solid #fff;
+  padding: 12px 0px;
+  background: linear-gradient(180deg, #040b14 0%, #00000000 100%);
   -moz-transition: all 0.5s ease-in-out 0s;
   -o-transition: all 0.5s ease-in-out 0s;
   -webkit-transition: all 0.5s ease-in-out 0s;
@@ -11,16 +13,13 @@
   /* End NavMenu */ }
   @media (max-width: 999px) {
     .header {
-      padding: 8px 0px; } }
+      position: relative;
+      padding: 8px 0px;
+      background: #0D2648; } }
   .header.sticky {
     position: fixed;
-    top: 0px;
-    left: 0px;
-    -webkit-box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.1);
-    -o-box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.1);
-    -ms-box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.1);
-    box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.1);
+    background: #0D2648;
+    padding: 0px;
     -moz-transition: all 0.5s ease-in-out 0s;
     -o-transition: all 0.5s ease-in-out 0s;
     -webkit-transition: all 0.5s ease-in-out 0s;
@@ -28,7 +27,8 @@
     animation: slideDown 0.4s ease forwards; }
     @media (max-width: 999px) {
       .header.sticky {
-        animation: none; } }
+        animation: none;
+        padding: 8px 0px; } }
 @keyframes slideDown {
   from {
     transform: translateY(-100%); }
@@ -40,7 +40,7 @@
         .header.sticky .logo img {
           max-width: 75px; } }
     .header.sticky .menu-item {
-      height: 84px; }
+      height: 76px; }
       @media (max-width: 999px) {
         .header.sticky .menu-item {
           height: auto; } }
@@ -65,7 +65,7 @@
       opacity: 1;
       border: none;
       outline: none;
-      background: #000; }
+      background: #fff; }
       .header .burger-line:nth-child(1) {
         top: 0px; }
       .header .burger-line:nth-child(2) {
@@ -117,7 +117,7 @@
         overflow-y: auto;
         visibility: hidden;
         box-shadow: 0px 10px 40px 0px #06163a1a;
-        background: #fff;
+        background: #0D2648;
         padding: 12px;
         transition: all 0.5s ease; }
         .header .navbar.active {
@@ -132,12 +132,12 @@
     gap: 32px; }
     .header .menu-item {
       position: relative;
-      height: 108px;
+      height: 70px;
       display: flex;
       align-items: center; }
       @media (max-width: 999px) {
         .header .menu-item {
-          border-bottom: 1px solid #F3F4F6;
+          border-bottom: 1px solid #f3f4f626;
           height: auto; } }
     .header .menu-link {
       display: flex;
@@ -145,7 +145,7 @@
       justify-content: center;
       position: relative;
       cursor: pointer;
-      color: #0f172a;
+      color: #fff;
       font-weight: 500;
       text-transform: capitalize;
       -moz-transition: all 0.5s ease-in-out 0s;
@@ -175,7 +175,7 @@
         position: relative;
         max-width: 16px;
         height: 16px;
-        fill: #000; }
+        fill: #fff; }
         @media only screen and (max-width: 999px) {
           .header .menu-link svg {
             z-index: -1; } }
@@ -222,7 +222,6 @@
     -o-box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.1);
     -ms-box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.1);
     box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.1);
-    border-radius: 0px 0px 16px 16px;
     -moz-transition: all 0.5s ease-in-out 0s;
     -o-transition: all 0.5s ease-in-out 0s;
     -webkit-transition: all 0.5s ease-in-out 0s;
@@ -240,8 +239,8 @@
         transform: translateY(0px);
         box-shadow: none;
         padding: 0px;
-        background: #F3F4F6;
         width: 100%;
+        background: none;
         border-radius: 0px; } }
     .header .submenu a {
       display: block;
@@ -256,8 +255,10 @@
       margin-bottom: 8px; }
       @media only screen and (max-width: 999px) {
         .header .submenu a {
-          padding: 8px 12px;
-          margin: 0px; } }
+          padding: 4px 12px;
+          margin: 0px;
+          border: 0px;
+          color: #ffffffb0; } }
       .header .submenu a:last-child {
         margin: 0px;
         border-bottom: 0px;
@@ -293,7 +294,8 @@
       justify-content: center;
       position: relative;
       border-radius: 50%;
-      border: 1px solid #E83646;
+      border: 1px solid #fff;
+      color: #fff;
       min-width: 44px;
       height: 44px;
       -moz-transition: all 0.5s ease-in-out 0s;
@@ -310,122 +312,6 @@
     @media (max-width: 999px) {
       .header .actions .bottom {
         display: none; } }
-
-.site-header {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  background: none;
-  border: 0px;
-  background: linear-gradient(180deg, #040b14 0%, #00000000 100%); }
-  @media (max-width: 999px) {
-    .site-header {
-      position: relative;
-      background: #0D2648; } }
-  .site-header.sticky {
-    background: #0D2648; }
-  .site-header .site-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: fixed;
-    width: 359px;
-    height: 100vh;
-    top: 0px;
-    left: -100%;
-    background: #fff;
-    transition: all 0.35s ease-in-out;
-    z-index: 100;
-    overflow: hidden;
-    overflow-y: scroll; }
-    @media (max-width: 999px) {
-      .site-header .site-menu {
-        width: 300px; } }
-    .site-header .site-menu::-webkit-scrollbar {
-      width: 0px; }
-    .site-header .site-menu.active {
-      left: 0px; }
-    .site-header .site-menu .itemhead {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 24px;
-      background: #0D2648; }
-      @media (max-width: 999px) {
-        .site-header .site-menu .itemhead {
-          padding: 12px; } }
-      .site-header .site-menu .itemhead .cancel {
-        cursor: pointer; }
-        @media (max-width: 999px) {
-          .site-header .site-menu .itemhead .cancel svg {
-            width: 36px;
-            height: 36px; } }
-    .site-header .site-menu .logo img {
-      max-width: 82px; }
-    .site-header .site-menu .menuitem {
-      display: block;
-      padding: 24px; }
-      @media (max-width: 999px) {
-        .site-header .site-menu .menuitem {
-          padding: 12px; } }
-      .site-header .site-menu .menuitem a {
-        position: relative;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: #1F2937;
-        font-size: 15px;
-        border-radius: 10px;
-        padding: 8px 12px;
-        margin-bottom: 4px;
-        transition: all 0.35s ease-in-out; }
-        .site-header .site-menu .menuitem a:last-child {
-          margin-bottom: 0px; }
-        .site-header .site-menu .menuitem a:hover, .site-header .site-menu .menuitem a.active {
-          color: #0D2648;
-          background: #0d264838; }
-          .site-header .site-menu .menuitem a:hover svg, .site-header .site-menu .menuitem a.active svg {
-            fill: #0D2648; }
-        .site-header .site-menu .menuitem a svg {
-          min-width: 18px;
-          max-width: 18px;
-          max-height: 24px; }
-  .site-header .actions .language {
-    border: 1px solid #fff;
-    color: #fff; }
-  .site-header .actions .menu-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    cursor: pointer;
-    min-width: 44px;
-    max-width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: #E83646;
-    -moz-transition: all 0.5s ease-in-out 0s;
-    -o-transition: all 0.5s ease-in-out 0s;
-    -webkit-transition: all 0.5s ease-in-out 0s;
-    transition: all 0.5s ease-in-out 0s; }
-    .site-header .actions .menu-toggle:hover {
-      box-shadow: 0 0 20px #e8364661; }
-    .site-header .actions .menu-toggle svg {
-      max-width: 30px;
-      max-height: 34px; }
-  .site-header .burger-line {
-    background: #fff; }
-  .site-header .menu-link {
-    color: #fff; }
-    @media (max-width: 999px) {
-      .site-header .menu-link {
-        color: #000; } }
-    .site-header .menu-link svg {
-      fill: #fff; }
-      @media (max-width: 999px) {
-        .site-header .menu-link svg {
-          fill: #000; } }
 
 .overbox {
   position: fixed;
@@ -444,7 +330,7 @@
 
 .slider-item {
   padding: 0px !important;
-  height: calc(100vh - 109px);
+  height: 100vh;
   overflow: hidden; }
   @media (max-width: 999px) {
     .slider-item {
