@@ -2156,6 +2156,30 @@
         background-size: 12px 12px;
         opacity: 0.6;
     }
+    &.cus-interesting {
+        .rowbox {
+            margin: $zero;
+            background: linear-gradient(90deg, #bd2e3b 0%, #e83646 100%);
+            padding: 90px 55px;
+            border-radius: 20px;
+            @media (max-width: 999px) {
+                padding: $com-spacing-8;
+            }
+            .fact-card {
+                padding: $zero;
+                padding: $zero;
+                box-shadow: none;
+                border-radius: $zero;
+                background: none;
+                .fact-number {
+                    color: $white;
+                }
+                .fact-label {
+                    color: #FFD0E5;
+                }
+            }
+        }
+    }
 }
 
 .site-production {
@@ -2202,5 +2226,222 @@
         color: #ffffffe0;
         text-align: center;
         margin-bottom: $com-spacing-4;
+    }
+}
+
+.site-secure {
+    background: $red;
+    z-index: 1;
+    overflow: inherit;
+    .container {
+        margin-top: -120px;
+        @media (max-width: 999px) {
+            margin-top: $zero;
+        }
+    }
+    .inner {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $com-spacing-6;
+        @media (max-width: 999px) {
+            grid-template-columns: repeat(1, 1fr);
+            gap: $com-spacing-3;
+        }
+        .item {
+            background: $white;
+            border-radius: 20px;
+            padding: $com-spacing-8;
+            @media (max-width: 1199px) {
+                padding: $com-spacing-5;
+            }
+            .minhead {
+                justify-content: flex-start;
+                gap: $com-spacing-6;
+                .icon {
+                    min-width: 64px;
+                    max-width: 64px;
+                    height: 64px;
+                    svg,
+                    img {
+                        max-width: 64px;
+                        max-height: 64px;
+                    }
+                }
+                .title {
+                    font-size: 22px;
+                    font-weight: 600;
+                }
+            }
+            p {
+                margin-top: $com-spacing-6;
+            }
+        }
+    }
+    .text {
+        @include flex;
+        flex-wrap: wrap;
+        text-align: center;
+        gap: $com-spacing-6;
+        color: $white;
+        margin-top: $com-spacing-8;
+        @media (max-width: 999px) {
+            gap: $com-spacing-3;
+        }
+        a {
+            display: flex;
+            align-items: center;
+            gap: $com-spacing-2;
+            color: $white;
+            font-weight: 600;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.site-security {
+    background: #f5f5ff;
+    .rowbox {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $com-spacing-6;
+        margin-top: $com-spacing-8;
+        @media (max-width: 999px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: $com-spacing-4;
+            margin-top: $com-spacing-6;
+        }
+        @media (max-width:767px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    .item {
+        padding: $com-spacing-5;
+        background: $white;
+        border-radius: 16px;
+        @media (max-width: 1199px) {}
+        @media (max-width: 999px) {
+            padding-top: $com-spacing-6;
+        }
+        .photo {
+            position: relative;
+            width: $fullwidth;
+            height: 262px;
+            border-radius: 16px;
+            overflow: hidden;
+            @media (max-width: 999px) {
+                height: 240px;
+            }
+            img {
+                width: $fullwidth;
+                height: $fullwidth;
+                object-fit: cover;
+            }
+            .icon {
+                @include flex;
+                position: absolute;
+                bottom: $com-spacing-5;
+                left: $com-spacing-5;
+                width: 60px;
+                height: 60px;
+                background: $red;
+                border-radius: 50%;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+        }
+        .title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-top: $com-spacing-3;
+        }
+        p {
+            margin-top: $com-spacing-1;
+        }
+    }
+}
+
+.custfeatures {
+    background: $dark;
+    &::before {
+        @include overlay;
+        background: url(../images/governance.jpg) fixed no-repeat center center/cover;
+        opacity: 0.1;
+    }
+    &::after {
+        @include overlay;
+        background: #0d264845;
+    }
+    .container {
+        z-index: 10;
+    }
+    .photo {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $com-spacing-6;
+        @media (max-width: 767px) {
+            display: none;
+        }
+        img {
+            width: $fullwidth;
+            height: 432px;
+            border-radius: 20px;
+            &:first-child {
+                margin-top: 200px;
+            }
+        }
+    }
+    .item {
+        .title {
+            color: $white
+        }
+        .text {
+            color: #a9a9a9;
+            margin-top: $com-spacing-2;
+        }
+        .accordion-item {
+            background: #121f3c !important;
+            .accordion-button {
+                color: $white !important;
+            }
+            .accordion-button {
+                background: none !important;
+                &::before {
+                    background: $red;
+                    color: $white !important;
+                }
+            }
+            .accordion-body {
+                color: #a9a9a9;
+            }
+        }
+    }
+}
+
+.cusbusinesses {
+    background: none;
+    .target-card {
+        background: #e836461c !important;
+    }
+}
+
+.cusempowering {
+    background: none;
+    .item {
+        padding: $zero;
+    }
+}
+
+.cusitems {
+    background: none;
+    padding: $zero;
+    z-index: 10;
+    .inner {
+        max-width: 94%;
+        margin: $zero $auto;
+        .item {
+            padding: $com-spacing-7;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
     }
 }

@@ -359,6 +359,192 @@
     }
 }
 
+.customheader {
+    padding: $zero;
+    @media (max-width: 999px) {
+        .pad {
+            padding-block: $com-spacing-2;
+        }
+    }
+    &.sticky {
+        .minheader {
+            display: none;
+        }
+        @media (max-width: 999px) {
+            .pad {
+                padding-block: $zero;
+            }
+        }
+    }
+    .minheader {
+        background: $red;
+        padding: $com-spacing-3 $zero;
+        margin-bottom: $com-spacing-3;
+        @media (max-width: 999px) {
+            padding: $com-spacing-2 $zero;
+            margin: $zero;
+        }
+        .container {
+            @media (max-width: 999px) {
+                justify-content: center;
+            }
+        }
+    }
+    .cont-media {
+        display: flex;
+        align-items: center;
+        gap: $com-spacing-3;
+        @media (max-width: 767px) {
+            display: none;
+        }
+        .media {
+            display: flex;
+            align-items: center;
+            gap: $com-spacing-2;
+            @media (max-width: 999px) {
+                justify-content: center;
+            }
+            svg,
+            img {
+                min-width: 18px;
+                min-height: 18px;
+                margin-top: $com-spacing-1;
+            }
+            .contant {
+                p,
+                a {
+                    display: block;
+                    width: $fullwidth;
+                    color: $white;
+                    margin: $zero;
+                    font-size: 14px;
+                    @include transition(all 0.5s ease-in-out 0s);
+                }
+                a {
+                    &:hover {
+                        color: $red;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.siteheader {
+    position: relative;
+    background: $white;
+    padding: $zero;
+    @include prefixer (box-shadow, 4px 4px 60px rgba(0, 0, 0, 0.1), webkit moz o ms);
+    .pad {
+        @media (max-width: 999px) {
+            padding-block: $com-spacing-2;
+        }
+    }
+    &.sticky {
+        background: $white;
+        .minheader {
+            display: none;
+        }
+        @media (max-width: 999px) {
+            .pad {
+                padding-block: $zero;
+            }
+        }
+    }
+    .minheader {
+        background: $dark;
+        padding: $com-spacing-3 $zero;
+        @media (max-width: 999px) {
+            padding: $com-spacing-2 $zero;
+        }
+        .container {
+            @media (max-width: 999px) {
+                justify-content: center;
+            }
+        }
+    }
+    .cont-media {
+        display: flex;
+        align-items: center;
+        gap: $com-spacing-3;
+        @media (max-width: 767px) {
+            display: none;
+        }
+        .media {
+            display: flex;
+            align-items: center;
+            gap: $com-spacing-2;
+            @media (max-width: 999px) {
+                justify-content: center;
+            }
+            svg,
+            img {
+                min-width: 18px;
+                min-height: 18px;
+                margin-top: $com-spacing-1;
+            }
+            .contant {
+                p,
+                a {
+                    display: block;
+                    width: $fullwidth;
+                    color: $white;
+                    margin: $zero;
+                    font-size: 14px;
+                    @include transition(all 0.5s ease-in-out 0s);
+                }
+                a {
+                    &:hover {
+                        color: $red;
+                    }
+                }
+            }
+        }
+    }
+    .menu-item {
+        height: 102px;
+        @media (max-width: 999px) {
+            height: auto;
+        }
+    }
+    .menu-link {
+        color: $blak;
+        svg {
+            fill: $blak;
+        }
+    }
+    .actions {
+        .language {
+            border-color: $red;
+            color: $red;
+        }
+    }
+    .burger-line {
+        background: $blak;
+    }
+    .cancel {
+        svg {
+            path {
+                fill: $red;
+            }
+        }
+    }
+    .navbar {
+        @media (max-width: 999px) {
+            background: $white;
+            .menu-item {
+                border-bottom: 1px solid #65676c26;
+            }
+            .submenu {
+                background: #ebebeb;
+                a {
+                    color: $blak;
+                }
+            }
+        }
+    }
+}
+
 .overbox {
     position: fixed;
     top: $zero;
